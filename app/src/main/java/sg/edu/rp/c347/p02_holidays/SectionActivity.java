@@ -32,17 +32,28 @@ public class SectionActivity extends AppCompatActivity {
         // set TextView to the section based on the position user clicked in MainActivity
         tvSection.setText(section);
 
-        alHoliday = new ArrayList();
-
-        if (section == "Secular") {
-            addSecular();
-        } else {
-            addEthnic();
-        }
-
-
+        int pos = i.getIntExtra("pos",0);
+        alHoliday = new ArrayList<>();
         aa = new SectionAdapter(this,R.layout.section_row,alHoliday);
+
+        if (pos == 0) {
+            alHoliday.add(new Holiday("New Year's Day", "1 Jan 2019"));
+            alHoliday.add(new Holiday("Labour Day", "1 May 2019"));
+            alHoliday.add(new Holiday("National Day", "9 Aug 2019"));
+
+        } else {
+            alHoliday.add(new Holiday("Chinese New Year","5-6 Feb 2019"));
+            alHoliday.add(new Holiday("Good Friday", "19 April 2019"));
+            alHoliday.add(new Holiday("Vesak Day", "19 May 2019"));
+            alHoliday.add(new Holiday("Hari Raya Puasa", "5 June 2019"));
+            alHoliday.add(new Holiday("Hari Raya Haji", "11 Aug 2019"));
+            alHoliday.add(new Holiday("Deepavali", "27 Oct 2019"));
+            alHoliday.add(new Holiday("Christmas Day", "25 Dec 2019"));
+
+        }
         lv.setAdapter(aa);
+
+
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -54,17 +65,9 @@ public class SectionActivity extends AppCompatActivity {
     }
 
     private void addSecular(){
-        alHoliday.add(new Holiday("New Year's Day", "1 Jan 2019"));
-        alHoliday.add(new Holiday("Labour Day", "1 May 2019"));
-        alHoliday.add(new Holiday("National Day", "9 Aug 2019"));
+
     }
     private void addEthnic(){
-        alHoliday.add(new Holiday("Chinese New Year","5-6 Feb 2019"));
-        alHoliday.add(new Holiday("Good Friday", "19 April 2019"));
-        alHoliday.add(new Holiday("Vesak Day", "19 May 2019"));
-        alHoliday.add(new Holiday("Hari Raya Puasa", "5 June 2019"));
-        alHoliday.add(new Holiday("Hari Raya Haji", "11 Aug 2019"));
-        alHoliday.add(new Holiday("Deepavali", "27 Oct 2019"));
-        alHoliday.add(new Holiday("Christmas Day", "25 Dec 2019"));
+
     }
 }

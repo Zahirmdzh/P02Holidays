@@ -17,13 +17,14 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> aa;
     ArrayList<String> aL;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         lv = findViewById(R.id.lvPH);
-
+//        aLHol = new ArrayList<>();
         aL = new ArrayList<>();
         aL.add("Secular");
         aL.add("Ethnic & Religion");
@@ -31,14 +32,20 @@ public class MainActivity extends AppCompatActivity {
         aa = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,aL);
         lv.setAdapter(aa);
 
+
+
         //want to pass data no need condition just use putExtra
         //inside onitemclick get position of listview clicked
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String itemSelected = aL.get(position);
+
                 Intent i = new Intent(MainActivity.this,SectionActivity.class);
                 i.putExtra("section",itemSelected);
+                //use listview position to use for comparison in section activity.. string dont work
+                i.putExtra("pos",position);
+
 
                 startActivity(i);
             }

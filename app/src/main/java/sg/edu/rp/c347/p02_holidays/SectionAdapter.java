@@ -18,10 +18,10 @@ public class SectionAdapter extends ArrayAdapter<Holiday> {
     private TextView tvHol, tvDate;
     private ImageView ivIcon;
 
-    public SectionAdapter(Context context, int resource, ArrayList<Holiday> holidays) {
-        super(context, resource, holidays);
+    public SectionAdapter(Context context, int resource, ArrayList<Holiday> objects) {
+        super(context, resource, objects);
 
-//        holidays = objects;
+         holidays = objects;
 
         // store context object as we need to use it later
         this.context = context;
@@ -44,11 +44,43 @@ public class SectionAdapter extends ArrayAdapter<Holiday> {
         //Based on class
         Holiday currPosition = holidays.get(position);
         tvHol.setText(currPosition.getName());
-        tvHol.setText(currPosition.getDate());
+        tvDate.setText(currPosition.getDate());
+
+        if (currPosition.getName() == "New Year's Day") {
+            ivIcon.setImageResource(R.drawable.new_year);
+
+        } else if (currPosition.getName() == "Labour Day") {
+            ivIcon.setImageResource(R.drawable.labour_day);
+
+        } else if (currPosition.getName() == "National Day") {
+            ivIcon.setImageResource(R.drawable.national_day);
+
+        } else if (currPosition.getName() == "New Year's Day") {
+            ivIcon.setImageResource(R.drawable.new_year);
+
+        }  else if (currPosition.getName() == "Chinese New Year") {
+            ivIcon.setImageResource(R.drawable.cny);
+
+        } else if (currPosition.getName() == "Good Friday") {
+            ivIcon.setImageResource(R.drawable.good_friday);
+
+        } else if (currPosition.getName() == "Hari Raya Puasa") {
+            ivIcon.setImageResource(R.drawable.hari_raya_puasa);
+
+        } else if (currPosition.getName() == "Hari Raya Haji") {
+            ivIcon.setImageResource(R.drawable.hari_raya_haji);
+
+        } else if (currPosition.getName() == "Vesak Day") {
+            ivIcon.setImageResource(R.drawable.vesak_day);
+
+        } else if (currPosition.getName() == "Deepavali") {
+            ivIcon.setImageResource(R.drawable.deepavali);
+
+        } else {
+            ivIcon.setImageResource(R.drawable.christmas);
+        }
 
 
-
-
-        return null;
+        return rowView;
     }
 }
