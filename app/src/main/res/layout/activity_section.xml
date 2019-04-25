@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".SectionActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ph" />
+        android:text="TextView" />
 
     <ListView
-        android:id="@+id/lvPH"
+        android:id="@+id/lvSection"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

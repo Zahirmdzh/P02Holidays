@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">P02-Holidays</string>
+    <string name="ph">Type of Public Holidays in SG</string>
 </resources>
