@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 String itemSelected = aL.get(position);
                 Intent i = new Intent(MainActivity.this,SectionActivity.class);
                 i.putExtra("section",itemSelected);
+
                 startActivity(i);
             }
         });

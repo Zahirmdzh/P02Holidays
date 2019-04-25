@@ -42,9 +42,12 @@ public class SectionAdapter extends ArrayAdapter<Holiday> {
         ivIcon = rowView.findViewById(R.id.imageView);
 
         //Based on class
-        Holiday currHoliday = holidays.get(position);
+        Holiday currPosition = holidays.get(position);
+        tvHol.setText(currPosition.getName());
+        tvHol.setText(currPosition.getDate());
 
-        tvHol.setText(currHoliday.getName());
+
+
 
         return null;
     }
