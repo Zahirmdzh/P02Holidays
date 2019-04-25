@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -58,7 +59,10 @@ public class SectionActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String name = alHoliday.get(position).getName();
+                String date = alHoliday.get(position).getDate();
 
+                Toast.makeText(SectionActivity.this,name + " Date : " + date,Toast.LENGTH_SHORT).show();
 
             }
         });
